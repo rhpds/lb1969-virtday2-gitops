@@ -7,9 +7,9 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: {{ .Values.cluster-observability-operator.git.url }}
-    targetRevision: {{ .Values.cluster-observability-operator.git.revision }}
-    path: {{ .Values.cluster-observability-operator.git.path }}
+    repoURL: {{ .Values.cluster_observability_operator.git.url }}
+    targetRevision: {{ .Values.cluster_observability_operator.git.revision }}
+    path: {{ .Values.cluster_observability_operator.git.path }}
   destination:
     server: https://kubernetes.default.svc
     namespace: openshift-cluster-observability-operator
