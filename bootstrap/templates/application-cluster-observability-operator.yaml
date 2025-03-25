@@ -7,30 +7,9 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: this
-    targetRevision: main
-    path: cluster-observability-operator
-    helm:
-      values: |
-        operator:
-          namespace: openshift-compliance
-          startingCSV: compliance-operator.x.y.z
-          installPlanApproval: Manual
-          config:
-            nodeSelector:
-              node-role.kubernetes.io/worker: ""
-              env:
-              - name: PLATFORM
-                value: "HyperShift"
-        helper-status-checker:
-          approver: true
-          checks:
-            - operatorName: compliance-operator
-              namespace:
-                name: openshift-compliance
-              syncwave: '1'
-              serviceAccount:
-                name: "compliance-status-checker"
+    repoURL: {{ .Values.cluster-observability-operator.url }}
+    targetRevision: {{ .Values.cluster-observability-operator.revision }}
+    path: {{ .Values.cluster-observability-operator.path }}
   destination:
     server: https://kubernetes.default.svc
     namespace: openshift-cluster-observability-operator
