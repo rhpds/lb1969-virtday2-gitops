@@ -21,3 +21,9 @@ cluster_observability_operator:
     url: https://github.com/rhpds/lb1969-virtday2-gitops.git
     revision: main
     path: cluster-observability-operator
+
+network_observability_operator:
+  git:
+    url: https://github.com/rhpds/lb1969-virtday2-gitops.git
+    revision: main
+    path: network-observability-operator
