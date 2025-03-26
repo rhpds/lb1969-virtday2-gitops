@@ -27,3 +27,17 @@ network_observability_operator:
     url: https://github.com/rhpds/lb1969-virtday2-gitops.git
     revision: main
     path: network-observability-operator
+
+loadmaker:
+  git:
+    url: https://github.com/rhpds/lb1969-virtday2-gitops.git
+    revision: main
+    path: loadmaker
+
+loadvm:
+  namespace: loadvm
+  route: loadvm
+  git:
+    url: https://github.com/rhpds/lb1969-virtday2-gitops.git
+    revision: main
+    path: loadvm

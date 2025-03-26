@@ -1,0 +1,37 @@
+---
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: loadmaker-loadvm
+  namespace: openshift-gitops
+spec:
+  project: default
+  source:
+    repoURL: {{ .Values.loadmaker.git.url }}
+    targetRevision: {{ .Values.loadmaker.git.revision }}
+    path: {{ .Values.loadmaker.git.path }}
+    helm:
+      values: |
+        user:
+          count: {{ .Values.user.count }}
+          base: {{ .Values.user.base }}
+        deployer:
+          domain: {{ .Values.deployer.domain }}
+          apiUrl: {{ .Values.deployer.apiUrl }}
+        loadvm:
+          namespace: {{ .Values.loadvm.namespace }}
+          route: {{ .Values.loadvm.route }}
+        loadmaker:
+          git:
+            url: https://github.com/rhpds/lb1969-virtday2-gitops.git
+            revision: main
+            path: loadmaker
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: {{ .Values.loadvm.namespace }}
+  syncPolicy:
+    automated:
+      prune: false
+      selfHeal: false
+    syncOptions:
+    - CreateNamespace=true
