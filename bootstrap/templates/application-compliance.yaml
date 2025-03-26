@@ -7,7 +7,7 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: this
+    repoURL: https://github.com/rhpds/ocp-cluster-addons
     targetRevision: main
     path: compliance
     helm:
@@ -19,9 +19,6 @@ spec:
           config:
             nodeSelector:
               node-role.kubernetes.io/worker: ""
-              env:
-              - name: PLATFORM
-                value: "HyperShift"
         helper-status-checker:
           approver: true
           checks:
