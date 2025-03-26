@@ -14,7 +14,7 @@ spec:
       values: |
         operator:
           namespace: openshift-compliance
-          startingCSV: compliance-operator.x.y.z
+          startingCSV: compliance-operator.1.6.2
           installPlanApproval: Manual
           config:
             nodeSelector:
