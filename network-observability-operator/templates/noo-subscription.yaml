@@ -7,6 +7,8 @@ metadata:
     operators.coreos.com/netobserv-operator.openshift-netobserv-operator: ''
   name: netobserv-operator
   namespace: openshift-netobserv-operator
+  annotations:
+    argocd.argoproj.io/sync-wave: "1"
 spec:
   channel: stable
   installPlanApproval: Automatic

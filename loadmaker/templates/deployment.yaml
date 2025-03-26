@@ -4,6 +4,8 @@ apiVersion: apps/v1
 metadata:
   name: loadmaker
   namespace: {{ .Values.loadvm.namespace }}
+  annotations:
+    argocd.argoproj.io/sync-wave: "2"
 spec:
   replicas: 1
   selector:
