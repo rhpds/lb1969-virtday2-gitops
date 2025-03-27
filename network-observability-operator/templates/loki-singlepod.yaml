@@ -108,6 +108,7 @@ metadata:
   annotations:
     argocd.argoproj.io/sync-wave: "1"
   name: loki
+  namespace: netobserv
   labels:
     app: loki
 spec:
@@ -141,6 +142,7 @@ spec:
 kind: Service
 apiVersion: v1
 metadata:
+  namespace: netobserv
   annotations:
     argocd.argoproj.io/sync-wave: "1"
   name: loki
