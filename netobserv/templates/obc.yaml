@@ -6,3 +6,4 @@ metadata:
   namespace: netobserv
 spec:
   generateBucketName: loki-bucket-odf
+  storageClassName: openshift-storage.noobaa.io
