@@ -8,6 +8,7 @@ spec:
   resources:
     requests:
       storage: 10G
+  storageClassName: ocs-external-storagecluster-ceph-rbd
   volumeMode: Filesystem
   accessModes:
     - ReadWriteOnce
