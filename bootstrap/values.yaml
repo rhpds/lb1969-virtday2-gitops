@@ -34,6 +34,13 @@ loadmaker:
     revision: main
     path: loadmaker
 
+netobserv:
+  namespace: netobserv
+  git:
+    url: https://github.com/rhpds/lb1969-virtday2-gitops.git
+    revision: main
+    path: netobserv
+
 loki:
   namespace: netobserv
   git:
