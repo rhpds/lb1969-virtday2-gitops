@@ -6,7 +6,7 @@ metadata:
   name: loki-config
   namespace: netobserv
   annotations:
-    argocd.argoproj.io/sync-wave: "2"
+    argocd.argoproj.io/sync-wave: "1"
 data:
   local-config.yaml: |
     auth_enabled: false
@@ -106,7 +106,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   annotations:
-    argocd.argoproj.io/sync-wave: "2"
+    argocd.argoproj.io/sync-wave: "1"
   name: loki
   labels:
     app: loki
@@ -142,7 +142,7 @@ kind: Service
 apiVersion: v1
 metadata:
   annotations:
-    argocd.argoproj.io/sync-wave: "2"
+    argocd.argoproj.io/sync-wave: "1"
   name: loki
 spec:
   selector:
