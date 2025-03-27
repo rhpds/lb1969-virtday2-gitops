@@ -3,6 +3,9 @@ apiVersion: flows.netobserv.io/v1beta2
 kind: FlowCollector
 metadata:
   name: cluster
+  annotations:
+    argocd.argoproj.io/sync-options: SkipDryRunOnMissingResource=true
+    argocd.argoproj.io/sync-wave: "2"
 spec:
   namespace: netobserv
   consolePlugin:
