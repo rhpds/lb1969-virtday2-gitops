@@ -10,6 +10,7 @@ metadata:
 spec:
   namespace: netobserv
   consolePlugin:
+    enable: true
     advanced:
       env:
         TEST_CONSOLE: "true"
