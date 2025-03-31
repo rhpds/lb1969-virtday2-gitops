@@ -3,8 +3,23 @@
 # Declare variables to be passed into your templates.
 
 user:
-  count: 2
+  count: 0
   prefix: user
+
+vms:
+- name: rhel9-vm1
+  namespace: vms-aap-day2
+  sshPublicKey: ssh-public-key-base64-string
+  nodeSelector: {}
+  tolerations: []
+- name: rhel9-vm2
+  namespace: vms-aap-day2
+  sshPublicKey: ssh-public-key-base64-string
+
+webterminal:
+  repoURL: https://github.com/rhpds/ocp-cluster-addons
+  targetRevision: main
+  path: webterminal
 
 deployer:
   domain: apps.cluster-guid.sandbox.opentlc.com

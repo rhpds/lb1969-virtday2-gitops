@@ -1,0 +1,86 @@
+{{- range .Values.vms }}
+---
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: {{ .namespace }}
+  annotations:
+    openshift.io/description: "Virtual Machines AAP Day 2"
+    openshift.io/display-name: "VMs AAP Day 2"
+---
+kind: Secret
+apiVersion: v1
+metadata:
+  name: {{ .name }}
+  namespace: {{ .namespace }}
+type: Opaque
+data:
+  key: {{ .sshPublicKey }}
+---
+apiVersion: kubevirt.io/v1
+kind: VirtualMachine
+metadata:
+  name: {{ .name }}
+  namespace: {{ .namespace }}
+  labels:
+    app.kubernetes.io/name: {{ .name }}
+spec:
+  instancetype:
+    name: u1.small
+  preference:
+    name: rhel.9
+  runStrategy: Always
+  template:
+    metadata:
+      labels:
+        network.kubevirt.io/headlessService: headless
+    spec:
+      domain:
+        devices:
+          autoattachPodInterface: false
+          interfaces:
+          - name: default
+            masquerade: {}
+      networks:
+        - name: default
+          pod: {}
+      subdomain: headless
+      {{- with .nodeSelector }}
+      nodeSelector:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      {{- with .tolerations }}
+      tolerations:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      volumes:
+      - name: rootdisk
+        dataVolume:
+          name: {{ .name }}
+      - name: cloudinitdisk
+        cloudInitNoCloud:
+          userData: |-
+            #cloud-config
+            user: rhel
+            password: openshift
+            chpasswd:
+              expire: false
+            ssh_pwauth: true
+      accessCredentials:
+      - sshPublicKey:
+          propagationMethod:
+            noCloud: {}
+          source:
+            secret:
+              secretName: {{ .name }}
+  dataVolumeTemplates:
+  - metadata:
+      name: {{ .name }}
+    spec:
+      sourceRef:
+        kind: DataSource
+        name: rhel9
+        namespace: openshift-virtualization-os-images
+      storage:
+        resources: {}
+{{- end }}
