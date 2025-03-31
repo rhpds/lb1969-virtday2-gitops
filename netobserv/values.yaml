@@ -9,3 +9,6 @@ user:
 deployer:
   domain: apps.cluster-guid.sandbox.opentlc.com
   apiUrl: https://api.cluster-guid.sandbox.opentlc.com:6443
+
+netobserv:
+  namespace: netobserv
