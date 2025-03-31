@@ -1,4 +1,21 @@
-# noo - Subscription
+apiVersion: v1
+kind: Namespace
+metadata:
+  annotations:
+    argocd.argoproj.io/sync-wave: "1"
+  labels:
+    kubernetes.io/metadata.name: openshift-netobserv-operator
+    openshift.io/cluster-monitoring: "true"
+  name: openshift-netobserv-operator
+---
+apiVersion: operators.coreos.com/v1
+kind: OperatorGroup
+metadata:
+  annotations:
+    argocd.argoproj.io/sync-wave: "1"
+  namespace: openshift-netobserv-operator
+  name: openshift-netobserv-operator
+spec: {}
 ---
 apiVersion: operators.coreos.com/v1alpha1
 kind: Subscription
@@ -8,9 +25,8 @@ metadata:
   annotations:
     argocd.argoproj.io/sync-wave: "1"
 spec:
+  installPlanApproval: Automatic
   channel: stable
-# installPlanApproval: Automatic
   name: netobserv-operator
   source: redhat-operators
   sourceNamespace: openshift-marketplace
-#  startingCSV: network-observability-operator.v1.8.0
