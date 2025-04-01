@@ -27,7 +27,7 @@ spec:
             path: {{ .Values.loadmaker.git.path }}
   destination:
     server: https://kubernetes.default.svc
-    namespace: {{ .Values.loadvm.namespace }}
+    namespace: {{ .Values.loadmaker.namespace }}
   syncPolicy:
     automated:
       prune: false
