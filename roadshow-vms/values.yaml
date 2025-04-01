@@ -13,6 +13,7 @@ roadshow_vms:
   route: vms
   runStrategy: "Manual"
   evictionStrategy: "None"
+  machineType: q35
   imageUrl: http://s3.us-east.cloud-object-storage.appdomain.cloud/roadshowocpvirt
   dataVolumes:
   - name: database
@@ -21,3 +22,6 @@ roadshow_vms:
     size: 90Gi
   - name: winweb02
     size: 90Gi
+  massVms:
+    count: 20
+    namespace: massvm
