@@ -25,7 +25,7 @@ metadata:
   annotations:
     argocd.argoproj.io/sync-wave: "2"
 spec:
-  volumeSnapshotClassName: ocs-external-storagecluster-ceph-rbd
+  volumeSnapshotClassName: ocs-external-storagecluster-rbdplugin-snapclass
   source:
     persistentVolumeClaimName: {{ .name }}
 {{- end }}
