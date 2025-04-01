@@ -37,4 +37,4 @@ spec:
         - |
           NODE_NAME=$(oc get nodes -l node-role.kubernetes.io/worker -o jsonpath='{.items[0].metadata.name}')
 
-          oc adm taint node $NODE_NAME key=virtualization:NoSchedule --overwrite
+          oc adm taint node $NODE_NAME key=virtualization:NoSchedule --overwrite=true
