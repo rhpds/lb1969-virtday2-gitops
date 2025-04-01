@@ -6,6 +6,11 @@ user:
   count: 0
   prefix: user
 
+default:
+  git:
+    url: https://github.com/rhpds/lb1969-virtday2-gitops.git
+    revision: main
+
 vms:
 - name: rhel9-vm1
   namespace: vms-aap-day2
