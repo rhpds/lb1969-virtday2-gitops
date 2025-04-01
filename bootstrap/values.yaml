@@ -69,8 +69,8 @@ loki:
     path: loki-operator
 
 loadvm:
-  namespace: loadvm
-  route: loadvm
+  namespace: vms-aap-day2
+  route: vms
   git:
     url: https://github.com/rhpds/lb1969-virtday2-gitops.git
     revision: main
