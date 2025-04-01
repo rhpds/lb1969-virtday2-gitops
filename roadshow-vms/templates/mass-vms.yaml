@@ -9,7 +9,7 @@ metadata:
 apiVersion: rbac.authorization.k8s.io/v1
 kind: RoleBinding
 metadata:
-  name: allow-clone-user
+  name: allow-clone-user-{{ .Values.roadshow_vms.massVms.namespace }}
   namespace: default
 subjects:
 - kind: ServiceAccount
@@ -23,7 +23,7 @@ roleRef:
 apiVersion: rbac.authorization.k8s.io/v1
 kind: RoleBinding
 metadata:
-  name: admin
+  name: admin-{{ .Values.roadshow_vms.massVms.namespace }}
   namespace: {{ .Values.roadshow_vms.massVms.namespace }}
 roleRef:
   apiGroup: rbac.authorization.k8s.io
