@@ -1,0 +1,19 @@
+---
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: roadshow-vms
+  namespace: openshift-gitops
+spec:
+  project: default
+  source:
+    repoURL: {{ .Values.roadshow_vms.repoURL }}
+    targetRevision: {{ .Values.roadshow_vms.targetRevision }}
+    path: {{ .Values.roadshow_vms.path }}
+    helm:
+      values: |
+        mykey: myvalue
+  destination:
+    server: https://kubernetes.default.svc
+  syncPolicy:
+    automated: {}

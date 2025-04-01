@@ -1,0 +1,31 @@
+{{- range .Values.roadshow_vms.dataVolumes }}
+---
+apiVersion: cdi.kubevirt.io/v1beta1
+kind: DataVolume
+metadata:
+  name: {{ .name }}
+  namespace: default
+  annotations:
+    argocd.argoproj.io/sync-wave: "1"
+    cdi.kubevirt.io/storage.bind.immediate.requested: 'true'
+spec:
+  source:
+    http:
+      url: {{ $.Values.roadshow_vms.imageUrl }}/{{ .name }}.qcow2
+  storage:
+    resources:
+      requests:
+        storage: 16Gi
+---
+apiVersion: snapshot.storage.k8s.io/v1
+kind: VolumeSnapshot
+metadata:
+  name: {{ .name }}-volumesnapshot
+  namespace: default
+  annotations:
+    argocd.argoproj.io/sync-wave: "2"
+spec:
+  volumeSnapshotClassName: ocs-external-storagecluster-ceph-rbd
+  source:
+    persistentVolumeClaimName: {{ .name }}
+{{- end }}
