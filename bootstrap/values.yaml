@@ -21,6 +21,14 @@ vms:
   namespace: vms-aap-day2
   sshPublicKey: ssh-public-key-base64-string
 
+loadmaker:
+  namespace: vms-aap-day2
+  route: vms
+  git:
+    url: https://github.com/rhpds/lb1969-virtday2-gitops.git
+    revision: main
+    path: loadmaker
+
 webterminal:
   repoURL: https://github.com/rhpds/ocp-cluster-addons
   targetRevision: main
@@ -48,12 +56,6 @@ network_observability_operator:
     revision: main
     path: network-observability-operator
 
-loadmaker:
-  git:
-    url: https://github.com/rhpds/lb1969-virtday2-gitops.git
-    revision: main
-    path: loadmaker
-
 netobserv:
   namespace: netobserv
   git:
@@ -67,11 +69,3 @@ loki:
     url: https://github.com/rhpds/lb1969-virtday2-gitops.git
     revision: main
     path: loki-operator
-
-loadvm:
-  namespace: vms-aap-day2
-  route: vms
-  git:
-    url: https://github.com/rhpds/lb1969-virtday2-gitops.git
-    revision: main
-    path: loadvm
