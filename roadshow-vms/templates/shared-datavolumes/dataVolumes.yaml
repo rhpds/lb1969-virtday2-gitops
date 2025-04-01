@@ -15,7 +15,7 @@ spec:
   storage:
     resources:
       requests:
-        storage: 16Gi
+        storage: {{ .size }}
 ---
 apiVersion: snapshot.storage.k8s.io/v1
 kind: VolumeSnapshot

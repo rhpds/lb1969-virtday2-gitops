@@ -16,5 +16,8 @@ roadshow_vms:
   imageUrl: http://s3.us-east.cloud-object-storage.appdomain.cloud/roadshowocpvirt
   dataVolumes:
   - name: database
+    size: 16Gi
   - name: winweb01
+    size: 90Gi
   - name: winweb02
+    size: 90Gi
