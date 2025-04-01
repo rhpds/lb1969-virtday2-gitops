@@ -18,16 +18,13 @@ spec:
         deployer:
           domain: {{ .Values.deployer.domain }}
           apiUrl: {{ .Values.deployer.apiUrl }}
-        loadvm:
-          namespace: {{ .Values.loadvm.namespace }}
-          route: {{ .Values.loadvm.route }}
         loadmaker:
-          namespace: {{ .Values.loadvm.namespace }}
-          route: {{ .Values.loadvm.route }}
+          namespace: {{ .Values.loadmaker.namespace }}
+          route: {{ .Values.loadmaker.route }}
           git:
-            url: https://github.com/rhpds/lb1969-virtday2-gitops.git
-            revision: main
-            path: loadmaker
+            url: {{ .Values.loadmaker.git.url }}
+            revision: {{ .Values.loadmaker.git.revision }}
+            path: {{ .Values.loadmaker.git.path }}
   destination:
     server: https://kubernetes.default.svc
     namespace: {{ .Values.loadvm.namespace }}
