@@ -22,3 +22,7 @@ spec:
   destination:
     server: https://kubernetes.default.svc
     namespace: openshift-compliance
+  syncPolicy:
+    automated:
+      prune: false
+      selfHeal: true
