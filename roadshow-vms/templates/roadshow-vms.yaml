@@ -1,3 +1,24 @@
+{{- if .Values.roadshow_vms.create_route }}
+---
+apiVersion: route.openshift.io/v1
+kind: Route
+metadata:
+  name: vms
+  namespace: windows-vms
+spec:
+  host: vms-windows-vms.{{ .Values.deployer.domain }}
+  path: /
+  to:
+    kind: Service
+    name: windows-vms
+    weight: 100
+  port:
+    targetPort: http
+  tls:
+    termination: edge
+    insecureEdgeTerminationPolicy: Redirect
+  wildcardPolicy: None
+{{- end }}
 ---
 apiVersion: v1
 kind: Namespace
