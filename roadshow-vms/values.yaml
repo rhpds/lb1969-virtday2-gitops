@@ -10,7 +10,7 @@ ingressgatway_url_path: https://localhost
 
 roadshow_vms:
   namespace: windows-vms
-  create_route: true
+  create_route: false
   route: vms
   runStrategy: "Manual"
   evictionStrategy: "None"
