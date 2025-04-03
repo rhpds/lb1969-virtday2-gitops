@@ -12,7 +12,12 @@ spec:
     path: {{ .Values.roadshow_vms.path }}
     helm:
       values: |
-        mykey: myvalue
+        user:
+          count: {{ .Values.user.count }}
+          base: {{ .Values.user.base }}
+        deployer:
+          domain: {{ .Values.deployer.domain }}
+          apiUrl: {{ .Values.deployer.apiUrl }}
   destination:
     server: https://kubernetes.default.svc
   syncPolicy:
