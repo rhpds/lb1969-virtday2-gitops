@@ -26,3 +26,4 @@ roadshow_vms:
   massVms:
     count: 20
     namespace: massvm
+  requests_per_second: 20

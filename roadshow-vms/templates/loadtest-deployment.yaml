@@ -24,7 +24,7 @@ spec:
               protocol: TCP
           env:
             - name: REQUESTS_PER_SECOND
-              value: '2'
+              value: '{{ .Values.roadshow_vms.requests_per_second }}' # '20'
             - name: DURATION
               value: '10000'
             - name: URL
