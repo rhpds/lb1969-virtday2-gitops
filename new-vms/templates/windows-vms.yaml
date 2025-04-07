@@ -59,7 +59,7 @@ spec:
 apiVersion: rbac.authorization.k8s.io/v1
 kind: RoleBinding
 metadata:
-  name: allow-clone-user
+  name: allow-clone-user-windows-vms
   namespace: default
 subjects:
 - kind: ServiceAccount
