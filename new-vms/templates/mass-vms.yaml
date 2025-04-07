@@ -267,7 +267,7 @@ spec:
       terminationGracePeriodSeconds: 0
       volumes:
       - dataVolume:
-          name: winweb-{{ $vm_index }}
+          name: winweb01-{{ $vm_index }}
         name: rootdisk
 ---
 apiVersion: kubevirt.io/v1
