@@ -29,10 +29,10 @@ loadmaker:
     revision: main
     path: loadmaker
 
-roadshow_vms:
+new_vms:
   repoURL: https://github.com/rhpds/lb1969-virtday2-gitops.git
   targetRevision: main
-  path: roadshow-vms
+  path: new-vms
 
 webterminal:
   repoURL: https://github.com/rhpds/ocp-cluster-addons

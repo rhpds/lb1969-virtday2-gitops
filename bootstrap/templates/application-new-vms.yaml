@@ -2,14 +2,14 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: roadshow-vms
+  name: new-vms
   namespace: openshift-gitops
 spec:
   project: default
   source:
-    repoURL: {{ .Values.roadshow_vms.repoURL }}
-    targetRevision: {{ .Values.roadshow_vms.targetRevision }}
-    path: {{ .Values.roadshow_vms.path }}
+    repoURL: {{ .Values.new_vms.repoURL }}
+    targetRevision: {{ .Values.new_vms.targetRevision }}
+    path: {{ .Values.vms.path }}
     helm:
       values: |
         user:

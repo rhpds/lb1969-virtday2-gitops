@@ -1,4 +1,4 @@
-# roadshow-vms - deploy the roadshow-vms with loadtester
+# new-vms - deploy the new-vms with loadtester
 
 ## Overview
 
