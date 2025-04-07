@@ -9,7 +9,7 @@ spec:
   source:
     repoURL: {{ .Values.new_vms.repoURL }}
     targetRevision: {{ .Values.new_vms.targetRevision }}
-    path: {{ .Values.vms.path }}
+    path: {{ .Values.new_vms.path }}
     helm:
       values: |
         user:
