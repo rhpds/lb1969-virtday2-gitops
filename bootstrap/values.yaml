@@ -21,6 +21,28 @@ vms:
   namespace: vms-aap-day2
   sshPublicKey: ssh-public-key-base64-string
 
+new_vms:
+  repoURL: https://github.com/rhpds/lb1969-virtday2-gitops.git
+  targetRevision: main
+  path: new-vms
+
+dataVolumes:
+  repoURL: https://github.com/rhpds/lb1969-virtday2-gitops.git
+  targetRevision: main
+  path: dataVolumes
+  namespace: default
+  imageUrl: "http://s3.us-east.cloud-object-storage.appdomain.cloud/roadshowocpvirt"
+  volumes:
+  - name: database
+    size: 16Gi
+    volumeSnapshotClassName: ocs-external-storagecluster-rbdplugin-snapclass
+  - name: winweb01
+    size: 90Gi
+    volumeSnapshotClassName: ocs-external-storagecluster-rbdplugin-snapclass
+  - name: winweb02
+    size: 90Gi
+    volumeSnapshotClassName: ocs-external-storagecluster-rbdplugin-snapclass
+
 loadmaker:
   namespace: vms-aap-day2
   route: vms
@@ -28,11 +50,6 @@ loadmaker:
     url: https://github.com/rhpds/lb1969-virtday2-gitops.git
     revision: main
     path: loadmaker
-
-new_vms:
-  repoURL: https://github.com/rhpds/lb1969-virtday2-gitops.git
-  targetRevision: main
-  path: new-vms
 
 webterminal:
   repoURL: https://github.com/rhpds/ocp-cluster-addons

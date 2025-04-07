@@ -21,8 +21,8 @@ new_vms:
     - namespace: windows-vms
       route: windows-vms
       requests_per_second: 200
-    - namespace: massvms
-      route: massvms
+    - namespace: mass-vms
+      route: mass-vms
       requests_per_second: 200
   windowsVms:
     count: 1
