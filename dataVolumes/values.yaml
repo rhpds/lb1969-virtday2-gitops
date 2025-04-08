@@ -8,7 +8,7 @@ deployer:
 
 ingressgatway_url_path: https://localhost
 
-dataVolumes:
+datavolumes:
   namespace: default
   imageUrl: "http://s3.us-east.cloud-object-storage.appdomain.cloud/roadshowocpvirt"
   volumes:

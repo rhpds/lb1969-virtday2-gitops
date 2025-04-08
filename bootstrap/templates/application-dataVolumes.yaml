@@ -2,14 +2,14 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: dataVolumes
+  name: datavolumes
   namespace: openshift-gitops
 spec:
   project: default
   source:
-    repoURL: {{ .Values.dataVolumes.repoURL }}
-    targetRevision: {{ .Values.dataVolumes.targetRevision }}
-    path: {{ .Values.dataVolumes.path }}
+    repoURL: {{ .Values.datavolumes.repoURL }}
+    targetRevision: {{ .Values.datavolumes.targetRevision }}
+    path: {{ .Values.datavolumes.path }}
     helm:
       values: |
         user:
@@ -18,10 +18,10 @@ spec:
         deployer:
           domain: {{ .Values.deployer.domain }}
           apiUrl: {{ .Values.deployer.apiUrl }}
-        dataVolumes:
-          imageUrl: {{ .Values.dataVolumes.imageUrl }}
+        datavolumes:
+          imageUrl: {{ .Values.datavolumes.imageUrl }}
           volumes:
-          {{- range .Values.dataVolumes.volumes }}
+          {{- range .Values.datavolumes.volumes }}
           - object_name: {{ .object_name }}
             volume_name: {{ .volume_name }}
             size: {{ .size }}

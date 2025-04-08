@@ -26,7 +26,10 @@ new_vms:
   targetRevision: main
   path: new-vms
 
-dataVolumes:
+datavolumes:
+  repoURL: https://github.com/rhpds/lb1969-virtday2-gitops.git
+  targetRevision: main
+  path: datavolumes
   namespace: default
   imageUrl: "http://s3.us-east.cloud-object-storage.appdomain.cloud/roadshowocpvirt"
   volumes:
