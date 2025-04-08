@@ -66,11 +66,12 @@ workspace:
     revision: main
     path: workspace
 
-cluster_observability_operator:
+cluster_observability_config:
   git:
     url: https://github.com/rhpds/lb1969-virtday2-gitops.git
     revision: main
-    path: cluster-observability-operator
+    path: cluster-observability-config
+  namespace: openshift-cluster-observability-operator
 
 network_observability_operator:
   git:
