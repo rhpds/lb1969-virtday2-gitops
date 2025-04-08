@@ -23,6 +23,7 @@ spec:
     kind: "Deployment"
     jsonPointers:
     - /spec/replicas
+    - /spec/template/spec/containers/0/env
   destination:
     server: https://kubernetes.default.svc
   syncPolicy:
