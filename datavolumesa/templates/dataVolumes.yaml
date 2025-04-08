@@ -4,7 +4,7 @@ apiVersion: cdi.kubevirt.io/v1beta1
 kind: DataVolume
 metadata:
   name: {{ .volume_name }}
-  namespace: {{ .namespace }}
+  namespace: default
   annotations:
     argocd.argoproj.io/sync-wave: "1"
     cdi.kubevirt.io/storage.bind.immediate.requested: 'true'
