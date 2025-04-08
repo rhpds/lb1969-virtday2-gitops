@@ -1,4 +1,4 @@
-# dataVolumes - create datavolumes on demand
+# datavolumes - create datavolumes on demand
 
 This repository contains a Helm chart
 
