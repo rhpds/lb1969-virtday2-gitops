@@ -6,6 +6,9 @@ metadata:
   name: {{ .namespace }}
   labels:
     app: windows
+{{- if .cluster_monitoring_label }}
+{{ .cluster_monitoring_label | indent 4 }}
+{{- end }}
 ---
 apiVersion: v1
 kind: Service

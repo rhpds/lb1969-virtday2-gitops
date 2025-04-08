@@ -32,6 +32,7 @@ new_vms:
     runStrategy: "RerunOnFailure"
     evictionStrategy: "None"
     machineType: q35
+    cluster_monitoring_label: "monitoring.rhobs: coo-stack" # empty disabled
   massVms:
     count: 10
     namespace: mass-vms
@@ -40,3 +41,4 @@ new_vms:
     runStrategy: "Manual"
     evictionStrategy: "None"
     machineType: q35
+    cluster_monitoring_label: "" # empty disabled
