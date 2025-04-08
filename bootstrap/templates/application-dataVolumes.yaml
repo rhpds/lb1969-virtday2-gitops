@@ -1,0 +1,33 @@
+---
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: dataVolumes
+  namespace: openshift-gitops
+spec:
+  project: default
+  source:
+    repoURL: {{ .Values.dataVolumes.repoURL }}
+    targetRevision: {{ .Values.dataVolumes.targetRevision }}
+    path: {{ .Values.dataVolumes.path }}
+    helm:
+      values: |
+        user:
+          count: {{ .Values.user.count }}
+          base: {{ .Values.user.base }}
+        deployer:
+          domain: {{ .Values.deployer.domain }}
+          apiUrl: {{ .Values.deployer.apiUrl }}
+        dataVolumes:
+          imageUrl: {{ .Values.dataVolumes.imageUrl }}
+          volumes:
+          {{- range .Values.dataVolumes.volumes }}
+          - object_name: {{ .object_name }}
+            volume_name: {{ .volume_name }}
+            size: {{ .size }}
+            volumeSnapshotClassName: {{ .volumeSnapshotClassName }}
+          {{- end }}
+  destination:
+    server: https://kubernetes.default.svc
+  syncPolicy:
+    automated: {}

@@ -27,19 +27,20 @@ new_vms:
   path: new-vms
 
 dataVolumes:
-  repoURL: https://github.com/rhpds/lb1969-virtday2-gitops.git
-  targetRevision: main
-  path: dataVolumes
   namespace: default
   imageUrl: "http://s3.us-east.cloud-object-storage.appdomain.cloud/roadshowocpvirt"
   volumes:
-  - name: database
+  # - name: database
+  - object_name: demo-database-centos7-20250408.qcow2
+    volume_name: database
     size: 16Gi
     volumeSnapshotClassName: ocs-external-storagecluster-rbdplugin-snapclass
-  - name: winweb01
+  - object_name: demo-winweb01-w2k22-20250408.qcow2
+    volume_name: winweb01
     size: 90Gi
     volumeSnapshotClassName: ocs-external-storagecluster-rbdplugin-snapclass
-  - name: winweb02
+  - object_name: demo-winweb01-w2k22-20250408.qcow2
+    volume_name: winweb02
     size: 90Gi
     volumeSnapshotClassName: ocs-external-storagecluster-rbdplugin-snapclass
 

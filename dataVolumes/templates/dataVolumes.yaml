@@ -1,17 +1,17 @@
-{{- range .Values.new_vms.dataVolumes }}
+{{- range .Values.dataVolumes.volumes }}
 ---
 apiVersion: cdi.kubevirt.io/v1beta1
 kind: DataVolume
 metadata:
-  name: {{ .name }}
-  namespace: default
+  name: {{ .volume_name }}
+  namespace: {{ .namespace }}
   annotations:
     argocd.argoproj.io/sync-wave: "1"
     cdi.kubevirt.io/storage.bind.immediate.requested: 'true'
 spec:
   source:
     http:
-      url: {{ $.Values.new_vms.imageUrl }}/{{ .name }}.qcow2
+      url: {{ $.Values.dataVolumes.imageUrl }}/{{ .object_name }}
   storage:
     resources:
       requests:
@@ -20,12 +20,12 @@ spec:
 apiVersion: snapshot.storage.k8s.io/v1
 kind: VolumeSnapshot
 metadata:
-  name: {{ .name }}-volumesnapshot
+  name: {{ .volume_name }}-volumesnapshot
   namespace: default
   annotations:
     argocd.argoproj.io/sync-wave: "2"
 spec:
-  volumeSnapshotClassName: ocs-external-storagecluster-rbdplugin-snapclass
+  volumeSnapshotClassName: {{ .volumeSnapshotClassName }}
   source:
-    persistentVolumeClaimName: {{ .name }}
+    persistentVolumeClaimName: {{ .volume_name }}
 {{- end }}
