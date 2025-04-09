@@ -154,6 +154,8 @@ spec:
             bios: {}
         machine:
           type: {{ .machineType }}
+        memory:
+          guest: 1Gi
         resources:
           requests:
             memory: 2Gi
@@ -258,6 +260,8 @@ spec:
             efi: {}
         machine:
           type: {{ .machineType }}
+        memory:
+          guest: 1Gi
         resources:
           requests:
             memory: 1Gi
@@ -361,6 +365,8 @@ spec:
             efi: {}
         machine:
           type: {{ .machineType }}
+        memory:
+          guest: 1Gi
         resources:
           requests:
             memory: 1Gi
