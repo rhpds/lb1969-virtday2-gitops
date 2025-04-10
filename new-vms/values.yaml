@@ -20,10 +20,10 @@ new_vms:
   loadtest:
     - namespace: windows-vms
       route: windows-vms
-      requests_per_second: 200
+      requests_per_second: 2
     - namespace: mass-vms
       route: mass-vms
-      requests_per_second: 200
+      requests_per_second: 2
   windowsVms:
     count: 1
     namespace: windows-vms
