@@ -40,7 +40,7 @@ spec:
     - protocol: TCP
       port: 9182
       targetPort: 9182
-      name: metrics (edited)
+      name: metrics
 # Routes
 ---
 kind: Route
