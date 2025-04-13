@@ -110,3 +110,9 @@ loki:
     url: https://github.com/rhpds/lb1969-virtday2-gitops.git
     revision: main
     path: loki-operator
+
+prom_exporter_configs:
+  git:
+    url: https://github.com/rhpds/lb1969-virtday2-gitops.git
+    revision: main
+    path: prometheus-exporter-configs
