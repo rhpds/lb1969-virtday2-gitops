@@ -156,9 +156,11 @@ spec:
             bios: {}
         machine:
           type: {{ $.Values.new_vms.massVms.machineType }}
+        memory:
+          guest: 1Gi
         resources:
           requests:
-            memory: 2Gi
+            memory: 1Gi
       evictionStrategy: {{ $.Values.new_vms.massVms.evictionStrategy }}
       networks:
       - name: default
@@ -260,9 +262,11 @@ spec:
             efi: {}
         machine:
           type: {{ $.Values.new_vms.massVms.machineType }}
+        memory:
+          guest: 6Gi
         resources:
           requests:
-            memory: 1Gi
+            memory: 6Gi
       evictionStrategy: {{ $.Values.new_vms.massVms.evictionStrategy }}
       networks:
       - name: default
@@ -363,9 +367,11 @@ spec:
             efi: {}
         machine:
           type: {{ $.Values.new_vms.massVms.machineType }}
+        memory:
+          guest: 6Gi
         resources:
           requests:
-            memory: 1Gi
+            memory: 6Gi
       evictionStrategy: {{ $.Values.new_vms.massVms.evictionStrategy }}
       networks:
       - name: default
