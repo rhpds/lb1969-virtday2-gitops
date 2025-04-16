@@ -44,6 +44,8 @@ kind: Route
 metadata:
   name: {{ .route }}
   namespace: {{ .namespace }}
+  annotations:
+    haproxy.router.openshift.io/disable_cookies: "true"
 spec:
   host: {{ .route }}-{{ .namespace }}.{{ $.Values.deployer.domain }}
   path: /
