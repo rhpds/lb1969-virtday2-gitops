@@ -309,7 +309,7 @@ spec:
         resources:
           requests:
             storage: 90Gi
-  runStrategy: {{ .runStrategy }}
+  runStrategy: Manual
   template:
     metadata:
       labels:
