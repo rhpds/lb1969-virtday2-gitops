@@ -125,6 +125,7 @@ spec:
   template:
     metadata:
       annotations:
+        descheduler.alpha.kubernetes.io/evict: "true"
         vm.kubevirt.io/flavor: small
         vm.kubevirt.io/os: centos9
         vm.kubevirt.io/workload: server
@@ -206,6 +207,8 @@ spec:
   runStrategy: {{ .runStrategy }}
   template:
     metadata:
+      annotations:
+        descheduler.alpha.kubernetes.io/evict: "true"
       labels:
         env: windows-vms
     spec:
@@ -312,6 +315,8 @@ spec:
   runStrategy: Manual
   template:
     metadata:
+      annotations:
+        descheduler.alpha.kubernetes.io/evict: "true"
       labels:
         env: windows-vms
     spec:
