@@ -30,7 +30,7 @@ new_vms:
     create_route: true
     route: windows-vms
     runStrategy: "RerunOnFailure"
-    evictionStrategy: "None"
+    evictionStrategy: "LiveMigrate"
     machineType: q35
     cluster_monitoring_label: "monitoring.rhobs: coo-stack" # empty disabled
   massVms:
@@ -39,6 +39,6 @@ new_vms:
     create_route: true
     route: mass-vms
     runStrategy: "Manual"
-    evictionStrategy: "None"
+    evictionStrategy: "LiveMigrate"
     machineType: q35
     cluster_monitoring_label: "" # empty disabled
