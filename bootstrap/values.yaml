@@ -12,6 +12,8 @@ default:
     revision: main
   namespace: default
 
+vms_namespace: vms-aap-day2
+
 vms:
 - name: rhel9-vm1
   namespace: vms-aap-day2
