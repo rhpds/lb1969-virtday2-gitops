@@ -2,7 +2,7 @@
 apiVersion: v1
 kind: Namespace
 metadata:
-  name: {{ .namespace }}
+  name: {{ .Values.vms.namespace }}
   annotations:
     argocd.argoproj.io/sync-wave: "1"
     openshift.io/description: "Virtual Machines AAP Day 2"
