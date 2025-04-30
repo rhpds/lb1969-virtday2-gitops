@@ -29,8 +29,6 @@ spec:
     server: https://kubernetes.default.svc
     namespace: {{ .Values.loadmaker.namespace }}
   syncPolicy:
-    automated:
-      prune: false
-      selfHeal: true
+    automated: {}
     syncOptions:
     - CreateNamespace=true
