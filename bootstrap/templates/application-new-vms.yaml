@@ -26,5 +26,6 @@ spec:
     - /spec/template/spec/containers
   destination:
     server: https://kubernetes.default.svc
+    namespace: {{ .Values.new_vms.namespace }}
   syncPolicy:
     automated: {}

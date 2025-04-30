@@ -15,5 +15,6 @@ spec:
         mykey: myvalue
   destination:
     server: https://kubernetes.default.svc
+    namespace: {{ .Values.webterminal.namespace }}
   syncPolicy:
     automated: {}

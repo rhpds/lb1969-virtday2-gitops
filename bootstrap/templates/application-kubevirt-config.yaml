@@ -12,6 +12,6 @@ spec:
     path: {{ .Values.kubevirt_config.git.path }}
   destination:
     server: https://kubernetes.default.svc
-    namespace: {{ .Values.default.namespace }}
+    namespace: {{ .Values.kubevirt_config.namespace }}
   syncPolicy:
     automated: {}
