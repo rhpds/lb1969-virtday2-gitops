@@ -4,7 +4,6 @@ kind: Namespace
 metadata:
   name: {{ .namespace }}
   annotations:
-  annotations:
     argocd.argoproj.io/sync-wave: "1"
     openshift.io/description: "Virtual Machines AAP Day 2"
     openshift.io/display-name: "VMs AAP Day 2"
