@@ -1,4 +1,3 @@
-{{- range .Values.vms }}
 ---
 apiVersion: v1
 kind: Namespace
@@ -9,6 +8,7 @@ metadata:
     argocd.argoproj.io/sync-wave: "1"
     openshift.io/description: "Virtual Machines AAP Day 2"
     openshift.io/display-name: "VMs AAP Day 2"
+{{- range .Values.vms }}
 ---
 kind: Secret
 apiVersion: v1
