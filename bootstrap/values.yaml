@@ -12,6 +12,8 @@ default:
     revision: main
   namespace: default
 
+disable_kubeadmin: true
+
 vms_namespace: vms-aap-day2
 
 vms:
