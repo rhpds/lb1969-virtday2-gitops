@@ -36,7 +36,7 @@ spec:
     name: u1.small
   preference:
     name: rhel.9
-  runStrategy: Always
+  runStrategy: RerunOnFailure
   template:
     metadata:
       labels:
